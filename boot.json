@@ -1,0 +1,55 @@
+{
+  "name": "Free Speech Attitudes",
+  "version": "1.0.0",
+  "styleFileList": [],
+  "scriptFileList": [
+  ],
+  "tweeFileList": [
+  ],
+  "imgFileList": [],
+  "additionFile": [
+  ],
+  "addonPlugin": [
+    {
+      "modName": "ReplacePatcher",
+      "addonName": "ReplacePatcherAddon",
+      "modVersion": "1.0.0",
+      "params": {
+        "js": [
+          {
+            "_comment_FA": "禁用说话态度修改函数",
+            "from": "function subCheck() {",
+            "to": "function subCheck() {return;",
+            "fileName": "stat-changes.js"
+          },
+          {
+            "_comment_FA": "禁用说话态度修改函数",
+            "from": "function subCheck() {",
+            "to": "function subCheck() {return;",
+            "fileName": "0.js"
+          }
+        ],
+        "twee": [
+          {
+            "_comment_FA": "允许低顺从下选择顺从说话态度",
+            "passageName": "Widgets Attitudes",
+            "from": "<<if $submissive gt 850>>",
+            "to": "<<if true>>"
+          },
+          {
+            "_comment_FA": "允许高顺从下选择抗拒说话态度",
+            "passageName": "Widgets Attitudes",
+            "from": "<<if $submissive lt 1150>>",
+            "to": "<<if true>>"
+          }
+        ]
+      }
+    }
+  ],
+  "dependenceInfo": [
+    {
+      "modName": "ReplacePatcher",
+      "version": "^1.0.0"
+    }
+  ]
+}
